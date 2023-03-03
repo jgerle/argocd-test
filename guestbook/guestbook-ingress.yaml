@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: guestbook-ui
+  namespace: guestbook
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-staging"
+spec:
+  tls:
+    - hosts:
+        - gb.pfuscheramwerk.de
+      secretName: tls-gbpaw-ingress
+  rules:
+    - host: gb.pfuscheramwerk.de
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: guestbook-ui
+                port:
+                  number: 80
