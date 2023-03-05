@@ -4,7 +4,7 @@ metadata:
   name: guestbook-ui
   namespace: guestbook
   annotations:
-    cert-manager.io/issuer: "letsencrypt-staging"
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
     external-dns.alpha.kubernetes.io/hostname: "gb.pfuscheramwerk.de"
 spec:
   tls:
