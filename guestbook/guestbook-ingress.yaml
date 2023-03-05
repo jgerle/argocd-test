@@ -5,14 +5,14 @@ metadata:
   namespace: guestbook
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-staging"
-    external-dns.alpha.kubernetes.io/hostname: "gb.pfuscheramwerk.de"
+    external-dns.alpha.kubernetes.io/hostname: "guestbook.pfuscheramwerk.de"
 spec:
   tls:
     - hosts:
-        - gb.pfuscheramwerk.de
+        - guestbook.pfuscheramwerk.de
       secretName: tls-gbpaw-ingress
   rules:
-    - host: gb.pfuscheramwerk.de
+    - host: guestbook.pfuscheramwerk.de
       http:
         paths:
           - path: /
